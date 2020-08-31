@@ -20,4 +20,12 @@ export default createGlobalStyle`
   button {
     cursor: pointer;
   }
+
+  .Toastify__toast--success {
+	background-color: #FF872C;
+  }
+
+  .Toastify__toast--error {
+	background-color: #c53030;
+  }
 `;

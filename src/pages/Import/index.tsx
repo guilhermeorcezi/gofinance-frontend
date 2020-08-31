@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 import filesize from 'filesize';
 
@@ -33,8 +34,12 @@ const Import: React.FC = () => {
 
     try {
       await api.post('/transactions/import', data);
+      history.push('/');
+
+      toast.success('Arquivo importado com sucesso');
     } catch (err) {
       console.log(err.response.error);
+      toast.error('Falha na hora de importar arquivo.');
     }
   }
 
